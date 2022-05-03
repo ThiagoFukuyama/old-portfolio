@@ -1,40 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Thiago Fukuyama | Portfólio</title>
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/main.css" />
     <script src="./js/script.js" defer></script>
-</head>
-<body>
-    <header>
-
-    </header>
+  </head>
+  <body>
+    <header></header>
 
     <main>
-        <section>
-            <div class="container">
-                <div class="flex-container apresentacao">
-                    <div class="box">
-                        <h1 class="meu-nome">Thiago Fukuyama</h1>
-                        <p class="subtitulo">Web Developer</p>
-                    </div>
-                    <div class="img-container">
-                        <img src="./assets/img/placeholder.webp" alt="Myself" class="minha-imagem">
-                    </div>
-                </div>
+      <section class="apresentacao center" id="apresentacao">
+        <div class="container">
+          <div class="flex-container">
+            <div class="box">
+              <h1 class="meu-nome text-center">Thiago Fukuyama</h1>
+              <p class="subtitulo">Web Developer</p>
+              <a href="#sobre-mim" class="btn">Quem sou eu?</a>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <div class="container">
-                <div class="meus-projetos">
-                    <a href="https://darkeyebr.github.io/ESCOLA/index.html" target="_blank">Web Crusaders Home</a>
+      <section class="sobre-mim center" id="sobre-mim">
+        <div class="container">
+          <div class="box">
+              <h1 class="title text-center color-secondary">Sobre mim</h1>
+              <div class="sobre-mim__box">
+                <div class="sobre-mim__text">
+                  <h1>Olá! Sou Thiago Fukuyama Marcilli</h1>
+                  <p>
+                    Tenho 17 anos e inicio minha carreira como Desenvolvedor Web. A
+                    importância desta área para mim vem da possibilidade de se criar
+                    praticamente qualquer coisa que se imagine. Tudo que se precisa
+                    é conhecimento, habilidade e criatividade, coisas que
+                    desenvolvo continuamente
+                  </p>
                 </div>
+                <img src="./assets/img/placeholder-2.jpg" alt="Eu mesmo" class="sobre-mim__img" />
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="projetos" id="projetos">
+        <div class="container">
+          <div class="meus-projetos">
+            <h1>Meus projetos</h1>
+
+            <div class="grid-container">
+              <div class="card">
+                <a
+                  href="https://darkeyebr.github.io/ESCOLA/index.html"
+                  target="_blank"
+                >
+                  <img src="" alt="" class="card__img" />
+                  <h2 class="card__titulo">Web Crusaders Home</h2>
+                  <p class="card__text">
+                    Página inicial do grupo de aprendizado e desenvolvimento Web
+                    Crusaders
+                  </p>
+                </a>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
     </main>
-</body>
+  </body>
 </html>
