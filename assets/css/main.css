@@ -1,13 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;1,100&family=Lobster&family=Montserrat&display=swap");
 
-/* --------------- Estilos gerais e resets --------------- */
+
+
+/* -----------------------------------------
+ESTILOS GERAIS E RESETS
+----------------------------------------- */
 
 :root {
   --ff-primary: "Roboto", sans-serif;
   --ff-accent: ;
-  --color-primary: black;
-  --color-secondary: white;
+  --color-primary: white;
+  --color-secondary: black;
 }
 
 *,
@@ -26,6 +30,7 @@ body {
   margin: 0;
   line-height: 1.6;
   font-family: var(--ff-primary);
+  color: var(--color-primary);
 }
 
 h1,
@@ -50,49 +55,48 @@ a {
 
 img {
   display: block;
-  max-width: 100%;
 }
 
 section {
   min-height: 100vh;
   min-width: 100%;
-  padding: 1.5rem;
+  padding-block: 2.5rem;
+  padding-inline: 1.5rem;
 }
-
-.center {
-    display: grid;
-    place-items: center;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.title {
-    position: relative;
-    font-size: clamp(2rem, 3vw, 3rem);
-    width: 50%;
-    margin-inline: auto;
-    margin-bottom: 3rem;
-    font-weight: 400;
-}
-
-.color-primary {
-    color: var(--color-primary);
-}
-
-.color-secondary {
-    color: var(--color-secondary);
-}
-
-/* --------------- Layout ---------------- */
-
-/* Section 1 (Apresentação)*/
 
 .container {
   width: 100%;
   max-width: 2000px;
 }
+
+.text-center {
+  text-align: center;
+}
+
+.title {
+  position: relative;
+  font-size: clamp(2rem, 3vw, 3rem);
+  width: 50%;
+  margin-inline: auto;
+  margin-bottom: 3rem;
+  font-weight: 400;
+}
+
+.color-primary {
+  color: var(--color-primary);
+}
+
+.color-secondary {
+  color: var(--color-secondary);
+}
+
+
+
+/* -----------------------------------------
+LAYOUT
+----------------------------------------- */
+
+/* SECTION 1 (HERO)*/
 
 .flex-container {
   display: flex;
@@ -101,16 +105,31 @@ section {
   align-items: center;
 }
 
-.apresentacao {
+.hero {
   display: grid;
   place-items: center;
   background-color: rgba(0, 0, 0, 0.6);
-  background-image: url("../assets/img/placeholder.webp");
+  background-image: url("../img/placeholder.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
   background-blend-mode: darken;
-  color: var(--color-secondary);
+  background-attachment: fixed;
+  color: var(--color-primary);
+}
+
+.hero .btn {
+  max-width: fit-content;
+  padding-block: 0.5em;
+  padding-inline: 1.5em;
+  margin-top: 0.75rem;
+  border: 1px solid var(--color-primary);
+}
+
+.hero .btn:hover,
+.hero .btn:focus {
+  outline: 0;
+  text-decoration: underline;
 }
 
 .box {
@@ -136,7 +155,7 @@ section {
   bottom: -5px;
   width: 8%;
   height: 3px;
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
 }
 
 .meu-nome::after,
@@ -147,7 +166,7 @@ section {
   bottom: -5px;
   width: 8%;
   height: 3px;
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
 }
 
 .subtitulo {
@@ -155,70 +174,100 @@ section {
   margin-top: 0.5rem;
 }
 
-.box .btn {
-  border: 1px solid var(--color-secondary);
-  max-width: fit-content;
-  padding-block: 0.5em;
-  padding-inline: 1.5em;
-  margin-top: 0.75rem;
-}
-
-.box .btn:hover,
-.box .btn:focus {
-  outline: 0;
-  text-decoration: underline;
-}
-
-/* Section 2 (Sobre mim)*/
+/* SECTION 2 (Sobre mim) */
 
 .sobre-mim {
-    background-color: #212121;
-    color: var(--color-primary);
+  background-color: rgb(5, 5, 5);
+  display: grid;
+  place-items: center;
 }
 
 .sobre-mim__box {
-    display: flex;
-    margin: 0 auto;
-    align-items: center;
-    max-width: 70%;
-    row-gap: 3rem;
-    column-gap: 4rem;
-    padding: 2rem;
-    border-radius: 5px;
-    background-color: #424242;
-    color: var(--color-secondary);
-}
-
-@media all and (max-width: 850px) {
-    .sobre-mim {
-        padding-block: 2rem;
-    }
-
-    .title {
-        margin-bottom: 2rem;
-    }
-    
-    .sobre-mim__box {
-        flex-direction: column;
-    }
-}
-
-@media all and (max-width: 440px) {
-    .sobre-mim__box {
-        max-width: 100%;
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
 
 .sobre-mim__text {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  font-size: 1.1rem;
+  opacity: 0;
+  transform: translateX(-30px);
 }
 
-.sobre-mim__text > h1 {
-    font-weight: 500;
+.sobre-mim__title {
+  font-size: clamp(1.75rem, 3vw, 3rem);
+  margin-bottom: 1.5rem;
+}
+
+.sobre-mim__text p:first-of-type {
+  margin-bottom: 1rem;
 }
 
 .sobre-mim__img {
-    border-radius: 10%;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  box-shadow: 0 0 5px white;
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.email {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  color: grey;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.email:hover,
+.email:focus-within {
+  color: rgb(192, 191, 191);
+}
+
+/* SECTION 3 (Projetos) */
+
+.projetos {
+  color: var(--color-secondary);
+}
+
+
+
+
+/* -----------------------------------------
+RESPONSIVIDADE
+----------------------------------------- */
+
+@media all and (min-width: 860px) {
+  .sobre-mim__box {
+    flex-direction: row;
+    max-width: 50%;
+    margin-inline: auto;
+    gap: 3rem;
+  }
+
+  .sobre-mim__text {
+    padding-right: 3rem;
+    border-right: 1px solid var(--color-primary);
+  }
+
+  .sobre-mim__title {
+    max-width: 16ch;
+  }
+
+  .email {
+    max-width: 50%;
+    margin-top: 2rem;
+    margin-inline: auto;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-primary);
+  }
+}
+
+@media all and (min-width: 860px) and (max-width: 1357px) {
+  .sobre-mim__box {
+    max-width: 80%;
+  }
 }

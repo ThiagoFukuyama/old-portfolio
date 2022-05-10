@@ -1,0 +1,57 @@
+
+:root {
+    --animation-duration: 1s;
+}
+
+.slidesRight {
+    animation: slidesRight var(--animation-duration) ease forwards;
+}
+
+.slidesLeft {
+    animation: slidesLeft var(--animation-duration) ease forwards;
+}
+
+.slidesUp {
+    animation: slidesUp var(--animation-duration) ease forwards;
+}
+
+
+/* -----------------------------------------
+KEYFRAMES
+----------------------------------------- */
+
+@keyframes slidesRight {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slidesLeft {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slidesUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
