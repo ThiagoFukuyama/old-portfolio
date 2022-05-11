@@ -9,7 +9,7 @@ ESTILOS GERAIS E RESETS
 
 :root {
   --ff-primary: "Roboto", sans-serif;
-  --ff-accent: ;
+  --ff-accent: "Archivo", sans-serif;
   --color-primary: white;
   --color-secondary: black;
 }
@@ -148,7 +148,7 @@ LAYOUT
 }
 
 .meu-nome::before,
-.title::before {
+.projetos__title::before {
   content: "";
   position: absolute;
   left: -5%;
@@ -159,7 +159,7 @@ LAYOUT
 }
 
 .meu-nome::after,
-.title::after {
+.projetos__title::after {
   content: "";
   position: absolute;
   right: -5%;
@@ -186,7 +186,7 @@ LAYOUT
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .sobre-mim__text {
@@ -198,6 +198,7 @@ LAYOUT
 .sobre-mim__title {
   font-size: clamp(1.75rem, 3vw, 3rem);
   margin-bottom: 1.5rem;
+  font-family: var(--ff-accent);
 }
 
 .sobre-mim__text p:first-of-type {
@@ -207,7 +208,7 @@ LAYOUT
 .sobre-mim__img {
   max-width: 100%;
   aspect-ratio: 1 / 1;
-  box-shadow: 0 0 5px white;
+  box-shadow: 1px 1px 2px white;
   opacity: 0;
   transform: translateX(30px);
 }
@@ -216,10 +217,14 @@ LAYOUT
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  margin-inline: auto;
   color: grey;
   opacity: 0;
+  max-width: fit-content;
   transform: translateY(30px);
+  border-top: 1px solid var(--color-primary);
 }
 
 .email:hover,
@@ -230,10 +235,41 @@ LAYOUT
 /* SECTION 3 (Projetos) */
 
 .projetos {
-  color: var(--color-secondary);
+  background-color: #121212;
+}
+
+.projetos__title {
+  position: relative;
+  max-width: fit-content;
+  margin-inline: auto;
+  margin-bottom: 4rem; 
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-family: var(--ff-accent);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 100%;
+  gap: 2.5rem;
+}
+
+.card {
+  animation-delay: var(--delay);
+  background-color: #242526;
+  box-shadow: 1px 1px 3px var(--color-primary);
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+.card__img {
+  max-width: 100%;
 }
 
 
+.card__body {
+  padding: 1rem;
+}
 
 
 /* -----------------------------------------
@@ -259,15 +295,27 @@ RESPONSIVIDADE
 
   .email {
     max-width: 50%;
-    margin-top: 2rem;
-    margin-inline: auto;
-    padding-top: 1rem;
-    border-top: 1px solid var(--color-primary);
   }
 }
 
 @media all and (min-width: 860px) and (max-width: 1357px) {
   .sobre-mim__box {
     max-width: 80%;
+  }
+
+  .email {
+    max-width: 80%;
+  }
+}
+
+@media all and (max-width: 1005px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr; 
+  }
+}
+
+@media all and (max-width: 720px) {
+  .grid-container {
+    grid-template-columns: 1fr;
   }
 }

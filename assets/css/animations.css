@@ -15,6 +15,10 @@
     animation: slidesUp var(--animation-duration) ease forwards;
 }
 
+.slidesDown {
+    animation: slidesDown var(--animation-duration) ease forwards;
+}
+
 
 /* -----------------------------------------
 KEYFRAMES
@@ -48,6 +52,18 @@ KEYFRAMES
     from {
         opacity: 0;
         transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slidesDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
     }
 
     to {
