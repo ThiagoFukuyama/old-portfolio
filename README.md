@@ -1,1 +1,3 @@
-# Portfólio para aula de empreendedorismo
+# Portfólio pessoal
+
+Repositório para o portfólio pessoal de Thiago Fukuyama Marcilli
