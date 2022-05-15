@@ -12,25 +12,31 @@
 </head>
 
 <body>
-  <header></header>
 
+  <!-- ======= PRINCIPAL ======= -->
   <main>
+
+    <!-- ======= BANNER ======= -->
     <section class="hero" id="hero">
       <div class="container">
         <div class="flex-container">
           <div class="box">
             <h1 class="meu-nome text-center">Thiago Fukuyama</h1>
             <p class="subtitulo">Web Developer</p>
-            <a href="#sobre-mim" class="btn">Conheça-me</a>
+            <div class="btn-group">
+              <a href="#sobre-mim" class="btn btn--alt">Conheça-me</a>
+              <a href="#projetos" class="btn">Projetos</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ======= SOBRE MIM ======= -->
     <section class="sobre-mim" id="sobre-mim">
       <div class="container">
         <div class="sobre-mim__box">
-          <div class="sobre-mim__text">
+          <div class="sobre-mim__text" data-animate="slidesRight">
             <h2 class="sobre-mim__title">Olá! Sou Thiago Fukuyama Marcilli</h2>
             <p>
               Inicio minha carreira como
@@ -49,70 +55,81 @@
               vez mais
             </p>
           </div>
-          <img src="./assets/img/placeholder-2.jpg" alt="Eu mesmo" class="sobre-mim__img" />
+          <img src="./assets/img/placeholder-2.jpg" alt="Eu mesmo" class="sobre-mim__img" data-animate="slidesLeft" />
         </div>
-        <span class="email text-center">
+        <span class="email text-center" data-animate="slidesUp">
           <a href="mailto: thiagofkm@gmail.com">
             <strong>E-mail:</strong> thiagofkm@gmail.com</a>
         </span>
       </div>
     </section>
 
+    <!-- ======= PROJETOS ======= -->
     <section class="projetos" id="projetos">
       <div class="container">
-        <h1 class="projetos__title">Meus projetos</h1>
-
-        <div class="grid-container">
-          <div class="card" style="animation-delay: 0">
+        <h1 class="projetos__title text-center" data-animate="slidesDown">Meus projetos</h1>
+        <div class="cards-container" id="cards-container" data-animate-children>
+          <div class="card">
             <a href="https://darkeyebr.github.io/ESCOLA/index.html" target="_blank">
-
               <img src="./assets/img/cards-img/web-crusaders.png" alt="Web Crusaders Home" class="card__img" />
               <div class="card__body">
-                <h2 class="card__titulo">Web Crusaders Home</h2>
+                <h2 class="card__title">Web Crusaders Home</h2>
                 <p class="card__text">
                   Página inicial do grupo de aprendizado e desenvolvimento
                   <em>Web Crusaders</em>
                 </p>
               </div>
-
+              <div class="card__backdrop">
+                <span>Visitar</span>
+              </div>
             </a>
           </div>
 
-          <div class="card" style="animation-delay: 0.25s">
+          <div class="card">
             <a href="https://darkeyebr.github.io/ESCOLA/index.html" target="_blank">
-
               <img src="./assets/img/cards-img/web-crusaders.png" alt="Web Crusaders Home" class="card__img" />
               <div class="card__body">
-                <h2 class="card__titulo">Web Crusaders Home</h2>
+                <h2 class="card__title">Web Crusaders Home</h2>
                 <p class="card__text">
                   Página inicial do grupo de aprendizado e desenvolvimento
                   <em>Web Crusaders</em>
                 </p>
               </div>
-
+              <div class="card__backdrop">
+                <span>Visitar</span>
+              </div>
             </a>
           </div>
 
-          <div class="card" style="animation-delay: 0.5s">
+          <div class="card">
             <a href="https://darkeyebr.github.io/ESCOLA/index.html" target="_blank">
-
               <img src="./assets/img/cards-img/web-crusaders.png" alt="Web Crusaders Home" class="card__img" />
               <div class="card__body">
-                <h2 class="card__titulo">Web Crusaders Home</h2>
+                <h2 class="card__title">Web Crusaders Home</h2>
                 <p class="card__text">
                   Página inicial do grupo de aprendizado e desenvolvimento
                   <em>Web Crusaders</em>
                 </p>
               </div>
-
+              <div class="card__backdrop">
+                <span>Visitar</span>
+              </div>
             </a>
           </div>
-
-          
         </div>
       </div>
     </section>
   </main>
+
+  <!-- ======= RODAPÉ ======= -->
+  <footer>
+    <div class="container">
+      <span class="text-center">
+        <p>Desenvolvido por Thiago Fukuyama Marcilli</p>
+        <p>Copyright &#169; 2022</p>
+      </span>
+    </div>
+  </footer>
 </body>
 
 </html>

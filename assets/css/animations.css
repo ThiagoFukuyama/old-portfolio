@@ -1,73 +1,27 @@
 
-:root {
-    --animation-duration: 1s;
+[data-animate] {
+    opacity: 0;
+    transition: transform 1s,
+                opacity 1s;
 }
 
-.slidesRight {
-    animation: slidesRight var(--animation-duration) ease forwards;
+[data-animate="slidesRight"] {
+    transform: translateX(-30px);
 }
 
-.slidesLeft {
-    animation: slidesLeft var(--animation-duration) ease forwards;
+[data-animate="slidesLeft"] {
+    transform: translateX(30px);
 }
 
-.slidesUp {
-    animation: slidesUp var(--animation-duration) ease forwards;
+[data-animate="slidesDown"] {
+    transform: translateY(-30px);
 }
 
-.slidesDown {
-    animation: slidesDown var(--animation-duration) ease forwards;
+[data-animate="slidesUp"] {
+    transform: translateY(30px);
 }
 
-
-/* -----------------------------------------
-KEYFRAMES
------------------------------------------ */
-
-@keyframes slidesRight {
-    from {
-        opacity: 0;
-        transform: translateX(-30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slidesLeft {
-    from {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slidesUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slidesDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.animate {
+    opacity: 1;
+    transform: translate(0, 0);
 }

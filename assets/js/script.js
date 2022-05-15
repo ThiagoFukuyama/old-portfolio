@@ -1,30 +1,27 @@
 
-const sobre_mim_text = document.querySelector(".sobre-mim__text")
-const sobre_mim_img = document.querySelector(".sobre-mim__img")
-const email_span = document.querySelector(".email")
-const projetos_title = document.querySelector(".projetos__title")
-
-const cards = [...document.querySelectorAll(".card")]
-
-const elementos = [sobre_mim_text, sobre_mim_img, email_span, projetos_title]
-const animations = ["slidesRight", "slidesLeft", "slidesUp", "slidesDown"]
+const elementos = document.querySelectorAll("[data-animate]")
+const cards_container = document.querySelector("[data-animate-children]")
 
 window.addEventListener("scroll", () => {
     let screen_position = window.innerHeight
 
-    for (let i = 0; i < elementos.length; i++) {
-        let element_position = elementos[i].getBoundingClientRect().top
-        let card_position = cards[i].getBoundingClientRect().top
+    elementos.forEach((elemento) => {
+        let element_position = elemento.getBoundingClientRect().top
 
         if (element_position < screen_position - 100) {
-            elementos[i].classList.add(animations[i])
+            elemento.classList.add("animate")
         }
+    })
 
-        if (card_position < screen_position - 100) {
-            cards[i].classList.add(animations[3])
-        }
+
+    let cards_position = cards_container.getBoundingClientRect().top
+
+    if (cards_position < screen_position - 200) {
+        let delay_base = 1
+        cards_container.querySelectorAll(".card").forEach((card) => {
+            card.classList.add("animate")
+            card.style.transitionDelay = `${delay_base * 0.25}s`
+            delay_base++
+        })
     }
-    
 })
-
-

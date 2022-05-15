@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;1,100&family=Lobster&family=Montserrat&display=swap");
 
-
-
 /* -----------------------------------------
 ESTILOS GERAIS E RESETS
 ----------------------------------------- */
@@ -67,6 +65,7 @@ section {
 .container {
   width: 100%;
   max-width: 2000px;
+  margin: 0 auto;
 }
 
 .text-center {
@@ -115,21 +114,8 @@ LAYOUT
   background-position: center top;
   background-blend-mode: darken;
   background-attachment: fixed;
+  padding-bottom: 5rem;
   color: var(--color-primary);
-}
-
-.hero .btn {
-  max-width: fit-content;
-  padding-block: 0.5em;
-  padding-inline: 1.5em;
-  margin-top: 0.75rem;
-  border: 1px solid var(--color-primary);
-}
-
-.hero .btn:hover,
-.hero .btn:focus {
-  outline: 0;
-  text-decoration: underline;
 }
 
 .box {
@@ -174,6 +160,37 @@ LAYOUT
   margin-top: 0.5rem;
 }
 
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  width: 100%;
+  padding-block: 0.5em;
+  padding-inline: 1.5em;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid var(--color-primary);
+  border-radius: 2px;
+}
+
+.btn:hover,
+.btn:focus {
+  outline: 0;
+  text-decoration: underline;
+}
+
+.btn--alt {
+  --btn-color: #7e7e7e;
+
+  background-color: var(--btn-color);
+  border: 1px solid var(--btn-color);
+}
+
+
 /* SECTION 2 (Sobre mim) */
 
 .sobre-mim {
@@ -191,8 +208,6 @@ LAYOUT
 
 .sobre-mim__text {
   font-size: 1.1rem;
-  opacity: 0;
-  transform: translateX(-30px);
 }
 
 .sobre-mim__title {
@@ -208,9 +223,8 @@ LAYOUT
 .sobre-mim__img {
   max-width: 100%;
   aspect-ratio: 1 / 1;
+  border-radius: 3px;
   box-shadow: 1px 1px 2px white;
-  opacity: 0;
-  transform: translateX(30px);
 }
 
 .email {
@@ -220,21 +234,21 @@ LAYOUT
   margin-top: 2rem;
   padding-top: 1rem;
   margin-inline: auto;
-  color: grey;
-  opacity: 0;
+  color: var(--color-primary);
   max-width: fit-content;
-  transform: translateY(30px);
   border-top: 1px solid var(--color-primary);
 }
 
-.email:hover,
-.email:focus-within {
-  color: rgb(192, 191, 191);
+.email > a:hover,
+.email > a:focus {
+  color: gray;
 }
+
 
 /* SECTION 3 (Projetos) */
 
 .projetos {
+  padding-top: 3.25rem;
   background-color: #121212;
 }
 
@@ -242,34 +256,79 @@ LAYOUT
   position: relative;
   max-width: fit-content;
   margin-inline: auto;
-  margin-bottom: 4rem; 
-  font-size: clamp(2rem, 4vw, 4rem);
+  margin-bottom: 2.75rem;
+  font-size: clamp(2.25rem, 4vw, 3rem);
   font-family: var(--ff-accent);
 }
 
-.grid-container {
+.cards-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  max-width: 100%;
-  gap: 2.5rem;
+  width: 100%;
+  gap: 2rem;
+  padding: 1rem;
 }
 
 .card {
-  animation-delay: var(--delay);
+  position: relative;
+  overflow: hidden;
   background-color: #242526;
+  color: var(--color-primary);
+  border-radius: 3px;
+  border-bottom-right-radius: 0;
   box-shadow: 1px 1px 3px var(--color-primary);
-  transform: translateY(30px);
   opacity: 0;
+  transform: translateY(-30px);
+  transition: 1s;
+}
+
+.card__backdrop {
+  opacity: 0;
+  pointer-events: none;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 2rem;
+  font-family: var(--ff-accent);
+  transition: 250ms;
+}
+
+@media (hover: hover) {
+  .card:hover .card__backdrop {
+    opacity: 1;
+    pointer-events: all;
+  }
 }
 
 .card__img {
   max-width: 100%;
 }
 
-
 .card__body {
   padding: 1rem;
 }
+
+.card__title {
+  margin-bottom: 0.25rem;
+}
+
+
+
+/* -----------------------------------------
+RODAPÉ
+----------------------------------------- */
+
+footer {
+  padding: 1.25rem;
+  font-size: 0.9rem;
+  background-color: rgb(73, 73, 73);
+  font-family: var(--ff-accent);
+}
+
 
 
 /* -----------------------------------------
@@ -277,6 +336,15 @@ RESPONSIVIDADE
 ----------------------------------------- */
 
 @media all and (min-width: 860px) {
+  .btn-group {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .btn {
+    width: 150px;
+  }
+
   .sobre-mim__box {
     flex-direction: row;
     max-width: 50%;
@@ -284,13 +352,13 @@ RESPONSIVIDADE
     gap: 3rem;
   }
 
+  .sobre-mim__title {
+    max-width: 16ch;
+  }
+
   .sobre-mim__text {
     padding-right: 3rem;
     border-right: 1px solid var(--color-primary);
-  }
-
-  .sobre-mim__title {
-    max-width: 16ch;
   }
 
   .email {
@@ -308,14 +376,24 @@ RESPONSIVIDADE
   }
 }
 
-@media all and (max-width: 1005px) {
-  .grid-container {
-    grid-template-columns: 1fr 1fr; 
+@media all and (max-width: 1110px) {
+  .cards-container {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-@media all and (max-width: 720px) {
-  .grid-container {
+@media all and (max-width: 750px) {
+  .projetos__title {
+    margin-bottom: 2.625rem;
+  }
+
+  .cards-container {
     grid-template-columns: 1fr;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .cards-container {
+    padding-inline: 0;
   }
 }
