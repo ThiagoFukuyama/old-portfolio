@@ -38,7 +38,7 @@ h4,
 h5,
 h6 {
   margin: 0;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
 p {
@@ -119,6 +119,7 @@ LAYOUT
 }
 
 .box {
+  position: relative;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -128,9 +129,10 @@ LAYOUT
 .meu-nome {
   position: relative;
   font-family: var(--ff-accent);
-  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-size: clamp(2.625rem, 6vw, 5rem);
   text-transform: uppercase;
   letter-spacing: 2px;
+  z-index: 3;
 }
 
 .meu-nome::before,
@@ -155,23 +157,79 @@ LAYOUT
   background-color: var(--color-primary);
 }
 
+
+/* EFEITO DE GLITCH */
+
+.glitch {
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: glitch 3000ms infinite;
+  z-index: 2;
+}
+
+.glitch:first-of-type {
+  --translate: -0.12em, -0.12em;
+
+  clip-path: inset(0 0 46% 0);
+}
+
+.glitch:last-of-type {
+  --translate: 0.12em, 0.12em;
+
+  clip-path: inset(46% 0 0 0);
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+
+  14%{
+    transform: translate(0);
+  }
+  15% {
+    transform: translate(var(--translate));
+  }
+
+  49% {
+    transform: translate(var(--translate));
+  }
+  50% {
+    transform: translate(0);
+  }
+
+  99% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(var(--translate));
+  }
+}
+
+/*------------------------------------------------*/
+
+
 .subtitulo {
-  font-size: clamp(1.25rem, 3vw, 2rem);
-  margin-top: 0.5rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-family: var(--ff-accent);
+  margin-top: 0.25rem;
 }
 
 .btn-group {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .btn {
   width: 100%;
   padding-block: 0.5em;
-  padding-inline: 1.5em;
+  padding-inline: 1.25em;
   text-align: center;
+  font-family: var(--ff-accent);
+  font-size: 1.1rem;
   background-color: transparent;
   border: 1px solid var(--color-primary);
   border-radius: 2px;
@@ -256,7 +314,7 @@ LAYOUT
   position: relative;
   max-width: fit-content;
   margin-inline: auto;
-  margin-bottom: 2.75rem;
+  margin-bottom: 2.5rem;
   font-size: clamp(2.25rem, 4vw, 3rem);
   font-family: var(--ff-accent);
 }
@@ -277,9 +335,6 @@ LAYOUT
   border-radius: 3px;
   border-bottom-right-radius: 0;
   box-shadow: 1px 1px 3px var(--color-primary);
-  opacity: 0;
-  transform: translateY(-30px);
-  transition: 1s;
 }
 
 .card__backdrop {
@@ -292,7 +347,7 @@ LAYOUT
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-family: var(--ff-accent);
   transition: 250ms;
 }
@@ -366,13 +421,19 @@ RESPONSIVIDADE
   }
 }
 
-@media all and (min-width: 860px) and (max-width: 1357px) {
+@media all and (max-width: 800px) {
+  .btn {
+    font-size: 1rem;
+  }
+}
+
+@media all and (min-width: 860px) and (max-width: 1440px) {
   .sobre-mim__box {
-    max-width: 80%;
+    max-width: 75%;
   }
 
   .email {
-    max-width: 80%;
+    max-width: 75%;
   }
 }
 
@@ -395,5 +456,28 @@ RESPONSIVIDADE
 @media all and (max-width: 400px) {
   .cards-container {
     padding-inline: 0;
+  }
+}
+
+@media all and (max-width: 300px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+
+/* -----------------------------------------
+CASO USUÁRIO NÃO QUEIRA ANIMAÇÕES
+----------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
   }
 }

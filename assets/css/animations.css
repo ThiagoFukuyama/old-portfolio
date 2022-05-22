@@ -21,6 +21,12 @@
     transform: translateY(30px);
 }
 
+[data-animate-children] > * {
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: 1s;
+}
+
 .animate {
     opacity: 1;
     transform: translate(0, 0);
