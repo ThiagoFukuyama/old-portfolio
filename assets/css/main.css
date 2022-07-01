@@ -76,8 +76,6 @@ section {
   text-align: center;
 }
 
-
-
 .color-primary {
   color: var(--color-primary);
 }
@@ -228,6 +226,7 @@ LAYOUT
   min-width: fit-content;
   text-align: center;
   text-transform: uppercase;
+  font-weight: 500;
   padding-block: 0.5em;
   padding-inline: 1.25em;
   font-family: var(--ff-accent);
@@ -395,7 +394,7 @@ LAYOUT
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 30%;
+  width: 70px;
   height: 1px;
   background-color: var(--color-primary);
 }
