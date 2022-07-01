@@ -1,14 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;1,100&family=Lobster&family=Montserrat&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* -----------------------------------------
 ESTILOS GERAIS E RESETS
 ----------------------------------------- */
 
 :root {
-  --ff-primary: "Roboto", sans-serif;
-  --ff-accent: "Archivo", sans-serif;
-  --color-primary: white;
+  --ff-primary: "Archivo", sans-serif;
+  --ff-accent: "Exo 2", sans-serif;
+  --color-primary: rgb(240, 240, 240);
   --color-secondary: black;
 }
 
@@ -56,7 +56,7 @@ img {
 }
 
 section {
-  min-height: 100vh;
+  min-height: 95vh;
   min-width: 100%;
   padding-block: 2.5rem;
   padding-inline: 1.5rem;
@@ -64,22 +64,19 @@ section {
 
 .container {
   width: 100%;
-  max-width: 2000px;
+  max-width: 1600px;
   margin: 0 auto;
+} 
+
+.sobre-mim .container {
+  max-width: 1000px;
 }
 
 .text-center {
   text-align: center;
 }
 
-.title {
-  position: relative;
-  font-size: clamp(2rem, 3vw, 3rem);
-  width: 50%;
-  margin-inline: auto;
-  margin-bottom: 3rem;
-  font-weight: 400;
-}
+
 
 .color-primary {
   color: var(--color-primary);
@@ -87,6 +84,10 @@ section {
 
 .color-secondary {
   color: var(--color-secondary);
+}
+
+.fa {
+  margin-right: 0.5rem !important;
 }
 
 
@@ -129,7 +130,7 @@ LAYOUT
 .meu-nome {
   position: relative;
   font-family: var(--ff-accent);
-  font-size: clamp(2.625rem, 6vw, 5rem);
+  font-size: clamp(3rem, 6vw, 5rem);
   text-transform: uppercase;
   letter-spacing: 2px;
   z-index: 3;
@@ -219,33 +220,42 @@ LAYOUT
 .btn-group {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.5rem;
   margin-top: 1.5rem;
 }
 
 .btn {
-  width: 100%;
+  min-width: fit-content;
+  text-align: center;
+  text-transform: uppercase;
   padding-block: 0.5em;
   padding-inline: 1.25em;
-  text-align: center;
   font-family: var(--ff-accent);
   font-size: 1.1rem;
-  background-color: transparent;
-  border: 1px solid var(--color-primary);
   border-radius: 2px;
+  background-color: var(--btn-color);
+  border: 1px solid var(--btn-color);
 }
 
-.btn:hover,
-.btn:focus {
-  outline: 0;
-  text-decoration: underline;
+.btn--primary {
+  --btn-color: #7a7a7a;
+  transition: background-color 100ms ease-in,
+              border 100ms ease-in;
+}
+
+.btn--primary:hover,
+.btn--primary:focus {
+  --btn-color: #616161;
 }
 
 .btn--alt {
-  --btn-color: #7e7e7e;
+  --btn-color: transparent;
+  border: 1px solid var(--color-primary);
+}
 
-  background-color: var(--btn-color);
-  border: 1px solid var(--btn-color);
+.btn--alt:hover,
+.btn--alt:focus {
+  text-decoration: underline;
 }
 
 
@@ -261,7 +271,8 @@ LAYOUT
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.5rem;
+  max-width: 900px;
+  gap: 1.5rem;
 }
 
 .sobre-mim__text {
@@ -269,7 +280,7 @@ LAYOUT
 }
 
 .sobre-mim__title {
-  font-size: clamp(1.75rem, 3vw, 3rem);
+  font-size: clamp(2rem, 3vw, 3rem);
   margin-bottom: 1.5rem;
   font-family: var(--ff-accent);
 }
@@ -285,21 +296,26 @@ LAYOUT
   box-shadow: 1px 1px 2px white;
 }
 
-.email {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2rem;
-  padding-top: 1rem;
+.contato {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
   margin-inline: auto;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
   color: var(--color-primary);
-  max-width: fit-content;
+  min-width: 90%;
   border-top: 1px solid var(--color-primary);
 }
 
-.email > a:hover,
-.email > a:focus {
-  color: gray;
+.contato > * {
+  transition: color 200ms;
+}
+
+.contato > *:hover,
+.contato > *:focus {
+  color: rgb(146, 146, 146);
 }
 
 
@@ -315,7 +331,7 @@ LAYOUT
   max-width: fit-content;
   margin-inline: auto;
   margin-bottom: 2.5rem;
-  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-size: clamp(2.5rem, 4vw, 3rem);
   font-family: var(--ff-accent);
 }
 
@@ -324,7 +340,7 @@ LAYOUT
   grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
   gap: 2rem;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .card {
@@ -337,26 +353,26 @@ LAYOUT
   box-shadow: 1px 1px 3px var(--color-primary);
 }
 
-.card__backdrop {
-  opacity: 0;
-  pointer-events: none;
-  display: grid;
-  place-items: center;
+.card::before {
+  content: "";
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  font-size: 1.75rem;
-  font-family: var(--ff-accent);
-  transition: 250ms;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 2;
+  background-color: var(--color-secondary);
+  opacity: 0;
+  transition: opacity 400ms;
 }
 
-@media (hover: hover) {
-  .card:hover .card__backdrop {
-    opacity: 1;
-    pointer-events: all;
-  }
+.card:hover::before,
+.card:focus-within::before {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.card > a {
+  display: block;
 }
 
 .card__img {
@@ -368,7 +384,20 @@ LAYOUT
 }
 
 .card__title {
-  margin-bottom: 0.25rem;
+  position: relative;
+  margin-bottom: 0.75rem;
+  max-width: fit-content;
+  padding-bottom: 0.5rem;
+}
+
+.card__title::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30%;
+  height: 1px;
+  background-color: var(--color-primary);
 }
 
 
@@ -390,6 +419,13 @@ footer {
 RESPONSIVIDADE
 ----------------------------------------- */
 
+@media all and (max-width: 560px) {
+  .contato {
+    grid-template-columns: 1fr;
+    font-size: 0.925rem;
+  }
+}
+
 @media all and (min-width: 860px) {
   .btn-group {
     flex-direction: row;
@@ -402,7 +438,6 @@ RESPONSIVIDADE
 
   .sobre-mim__box {
     flex-direction: row;
-    max-width: 50%;
     margin-inline: auto;
     gap: 3rem;
   }
@@ -416,7 +451,7 @@ RESPONSIVIDADE
     border-right: 1px solid var(--color-primary);
   }
 
-  .email {
+  .contato {
     max-width: 50%;
   }
 }
@@ -427,15 +462,6 @@ RESPONSIVIDADE
   }
 }
 
-@media all and (min-width: 860px) and (max-width: 1440px) {
-  .sobre-mim__box {
-    max-width: 75%;
-  }
-
-  .email {
-    max-width: 75%;
-  }
-}
 
 @media all and (max-width: 1110px) {
   .cards-container {
