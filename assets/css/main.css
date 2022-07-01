@@ -432,10 +432,6 @@ RESPONSIVIDADE
     gap: 1.5rem;
   }
 
-  .btn {
-    width: 150px;
-  }
-
   .sobre-mim__box {
     flex-direction: row;
     margin-inline: auto;
