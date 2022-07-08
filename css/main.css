@@ -305,7 +305,7 @@ section {
   color: var(--color-primary);
   min-width: 100%;
   border-top: 1px solid var(--color-primary);
-  color: rgb(170, 170, 170);
+  color: rgb(180, 180, 180);
 }
 
 .contato > * {
@@ -314,7 +314,7 @@ section {
 
 .contato > *:hover,
 .contato > *:focus {
-  color: var(--color-primary);
+  color: rgb(245, 245, 245);
 }
 
 
