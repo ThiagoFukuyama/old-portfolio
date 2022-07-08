@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* -----------------------------------------
-ESTILOS GERAIS E RESETS
+|| ESTILOS GERAIS E RESETS
 ----------------------------------------- */
 
 :root {
@@ -64,24 +64,11 @@ section {
 
 .container {
   width: 100%;
-  max-width: 1600px;
   margin: 0 auto;
 } 
 
-.sobre-mim .container {
-  max-width: 1000px;
-}
-
 .text-center {
   text-align: center;
-}
-
-.color-primary {
-  color: var(--color-primary);
-}
-
-.color-secondary {
-  color: var(--color-secondary);
 }
 
 .fa {
@@ -91,10 +78,10 @@ section {
 
 
 /* -----------------------------------------
-LAYOUT
+ ||LAYOUT
 ----------------------------------------- */
 
-/* SECTION 1 (HERO)*/
+/* || SECTION 1 (HERO)*/
 
 .flex-container {
   display: flex;
@@ -107,7 +94,7 @@ LAYOUT
   display: grid;
   place-items: center;
   background-color: rgba(0, 0, 0, 0.6);
-  background-image: url("../img/placeholder.webp");
+  background-image: url("../assets/img/placeholder.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
@@ -157,7 +144,7 @@ LAYOUT
 }
 
 
-/* EFEITO DE GLITCH */
+/* || EFEITO DE GLITCH */
 
 .glitch {
   position: absolute;
@@ -217,8 +204,8 @@ LAYOUT
 
 .btn-group {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  flex-direction: row;
+  gap: 1.5rem;
   margin-top: 1.5rem;
 }
 
@@ -258,7 +245,7 @@ LAYOUT
 }
 
 
-/* SECTION 2 (Sobre mim) */
+/* || SECTION 2 (Sobre mim) */
 
 .sobre-mim {
   background-color: rgb(5, 5, 5);
@@ -266,19 +253,30 @@ LAYOUT
   place-items: center;
 }
 
-.sobre-mim__box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.sobre-mim .container {
+  max-width: 1000px;
+}
+
+.sobre-mim__grid {
+  --spacer: 1.5rem;
+
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: 1fr 30%;
+  place-items: center;
+  width: 100%;
   max-width: 900px;
-  gap: 1.5rem;
+  gap: var(--spacer);
 }
 
 .sobre-mim__text {
   font-size: 1.1rem;
+  padding-right: calc(var(--spacer) * 2);
+  border-right: 1px solid var(--color-primary);
 }
 
 .sobre-mim__title {
+  max-width: 16ch;
   font-size: clamp(2rem, 3vw, 3rem);
   margin-bottom: 1.5rem;
   font-family: var(--ff-accent);
@@ -296,16 +294,18 @@ LAYOUT
 }
 
 .contato {
+  grid-column: span 2;
   display: grid;
   justify-items: center;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   margin-inline: auto;
-  margin-top: 2rem;
-  padding-top: 1.5rem;
+  margin-top: calc(var(--spacer) / 2);
+  padding-top: var(--spacer);
   color: var(--color-primary);
-  min-width: 90%;
+  min-width: 100%;
   border-top: 1px solid var(--color-primary);
+  color: rgb(170, 170, 170);
 }
 
 .contato > * {
@@ -314,15 +314,19 @@ LAYOUT
 
 .contato > *:hover,
 .contato > *:focus {
-  color: rgb(146, 146, 146);
+  color: var(--color-primary);
 }
 
 
-/* SECTION 3 (Projetos) */
+/* || SECTION 3 (Projetos) */
 
 .projetos {
-  padding-block: 3.25rem;
+  padding: 3.25rem 1rem;
   background-color: #121212;
+}
+
+.projetos .container {
+  max-width: 1600px;
 }
 
 .projetos__title {
@@ -336,9 +340,9 @@ LAYOUT
 
 .cards-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   width: 100%;
-  gap: 2rem;
+  gap: 1.5rem;
   padding: 0.5rem;
 }
 
@@ -352,22 +356,9 @@ LAYOUT
   box-shadow: 1px 1px 3px var(--color-primary);
 }
 
-.card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: 2;
-  background-color: var(--color-secondary);
-  opacity: 0;
-  transition: opacity 400ms;
-}
-
-.card:hover::before,
-.card:focus-within::before {
-  opacity: 0.3;
-  pointer-events: none;
+.card:hover .card__img,
+.card:focus-within .card__img {
+  filter: brightness(65%);
 }
 
 .card > a {
@@ -376,6 +367,7 @@ LAYOUT
 
 .card__img {
   max-width: 100%;
+  transition: 200ms ease-in;
 }
 
 .card__body {
@@ -387,6 +379,7 @@ LAYOUT
   margin-bottom: 0.75rem;
   max-width: fit-content;
   padding-bottom: 0.5rem;
+  font-size: 1.5rem;
 }
 
 .card__title::before {
@@ -402,11 +395,11 @@ LAYOUT
 
 
 /* -----------------------------------------
-RODAPÉ
+|| RODAPÉ
 ----------------------------------------- */
 
 footer {
-  padding: 1.25rem;
+  padding: 1rem;
   font-size: 0.9rem;
   background-color: rgb(73, 73, 73);
   font-family: var(--ff-accent);
@@ -415,7 +408,7 @@ footer {
 
 
 /* -----------------------------------------
-RESPONSIVIDADE
+|| RESPONSIVIDADE
 ----------------------------------------- */
 
 @media all and (max-width: 560px) {
@@ -425,29 +418,24 @@ RESPONSIVIDADE
   }
 }
 
-@media all and (min-width: 860px) {
+@media all and (max-width: 860px) {
   .btn-group {
-    flex-direction: row;
-    gap: 1.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
-  .sobre-mim__box {
-    flex-direction: row;
-    margin-inline: auto;
-    gap: 3rem;
-  }
-
-  .sobre-mim__title {
-    max-width: 16ch;
+  .sobre-mim__grid {
+    --spacer: 1.5rem;
+    grid-template-columns: 1fr;
   }
 
   .sobre-mim__text {
-    padding-right: 3rem;
-    border-right: 1px solid var(--color-primary);
+    padding-right: 0;
+    border: 0;
   }
 
   .contato {
-    max-width: 50%;
+    grid-column: 1;
   }
 }
 
@@ -488,7 +476,7 @@ RESPONSIVIDADE
 
 
 /* -----------------------------------------
-CASO USUÁRIO NÃO QUEIRA ANIMAÇÕES
+|| CASO USUÁRIO NÃO QUEIRA ANIMAÇÕES
 ----------------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
