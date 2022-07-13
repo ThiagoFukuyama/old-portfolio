@@ -8,7 +8,7 @@ window.addEventListener("scroll", () => {
     animate_elements.forEach((elemento) => {
         let element_position = elemento.getBoundingClientRect().top
 
-        if (element_position < screen_position - 100) {
+        if (element_position < screen_position - 150) {
             elemento.classList.add("animate")
         }
     })
@@ -16,7 +16,7 @@ window.addEventListener("scroll", () => {
 
     let ac_position = animate_children.getBoundingClientRect().top
 
-    if (ac_position < screen_position - 200) {
+    if (ac_position < screen_position - 150) {
         let delay_base = 1
         animate_children.querySelectorAll("[data-animate-children] > *").forEach((child) => {
             child.classList.add("animate")

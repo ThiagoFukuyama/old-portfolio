@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Thiago Fukuyama | Portfólio</title>
+  <title>Thiago Fukuyama - Portfólio</title>
   <!-- FONT AWESOME -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <!-- FAVICON -->
@@ -24,14 +24,16 @@
     <!-- ======= BANNER ======= -->
     <section class="hero" id="hero">
       <div class="container">
-        <div class="flex-container">
-          <div class="box">
+        <div class="hero__wrapper">
+          <div class="hero__box">
 
             <span class="glitch">
               <h1 aria-hidden="true" class="meu-nome text-center">Thiago Fukuyama</h1>
             </span>
+
             <!-- MEU NOME -->
             <h1 class="meu-nome text-center">Thiago Fukuyama</h1>
+
             <span class="glitch">
                <h1 aria-hidden="true" class="meu-nome text-center">Thiago Fukuyama</h1>
             </span>
@@ -64,12 +66,12 @@
               e me desenvolver cada vez mais
             </p>
           </div>
-          <img src="assets/img/placeholder-2.jpg" alt="Imagem de Thiago" class="sobre-mim__img" data-animate="slidesLeft" />
-          <div class="contato" data-animate="slidesUp">
-            <span><strong><i class="fa fa-location-arrow" aria-hidden="true"></i>Cidade:</strong> Mococa - SP</span>
-            <a href="tel: +5519989183856"><strong><i class="fa fa-phone" aria-hidden="true"></i>Celular:</strong> (19) 98918-3856</a>
-            <a href="https://github.com/ThiagoFukuyama" target="_blank"><strong><i class="fa fa-github" aria-hidden="true"></i>GitHub:</strong> ThiagoFukuyama</a>
-            <a href="mailto: thiagofkm@gmail.com"><strong><i class="fa fa-envelope" aria-hidden="true"></i> E-mail:</strong> thiagofkm@gmail.com</a>
+          <img src="assets/img/placeholder-2.jpg" alt="Imagem de Thiago" class="sobre-mim__img" data-animate="slidesLeft">
+          <div class="info" data-animate="slidesUp">
+            <span class="info__item"><strong><i class="fa fa-location-arrow" aria-hidden="true"></i>Cidade:</strong> Mococa - SP</span>
+            <a class="info__item" href="tel: +5519989183856"><strong><i class="fa fa-phone" aria-hidden="true"></i>Celular:</strong> (19) 98918-3856</a>
+            <a class="info__item" href="https://github.com/ThiagoFukuyama" target="_blank"><strong><i class="fa fa-github" aria-hidden="true"></i>GitHub:</strong> ThiagoFukuyama</a>
+            <a class="info__item" href="mailto: thiagofkm@gmail.com"><strong><i class="fa fa-envelope" aria-hidden="true"></i> E-mail:</strong> thiagofkm@gmail.com</a>
           </div>
         </div>
       </div>
@@ -77,12 +79,12 @@
 
     <!-- ======= PROJETOS ======= -->
     <section class="projetos" id="projetos">
-      <div class="container">
-        <h1 class="projetos__title text-center" data-animate="slidesDown">Meus projetos</h1>
+      <div class="container container--lg">
+        <h1 class="title before-after-line text-center" data-animate="slidesDown">Meus projetos</h1>
         <div class="cards-container" id="cards-container" data-animate-children>
           <div class="card">
             <a href="https://escola.stardustcrusaders.repl.co" target="_blank">
-              <img src="./assets/img/cards-img/web-crusaders.png" alt="Web Crusaders Home" class="card__img" />
+              <img src="./assets/img/cards-img/web-crusaders.png" alt="Web Crusaders Home" class="card__img">
               <div class="card__body">
                 <h2 class="card__title">Web Crusaders</h2>
                 <p class="card__text">
@@ -90,12 +92,13 @@
                   <em>Web Crusaders</em>
                 </p>
               </div>
+              <i class="link-icon fa fa-external-link" aria-hidden="true"></i>
             </a>
           </div>
 
           <div class="card">
             <a href="http://lojamaraja.epizy.com" target="_blank">
-              <img src="./assets/img/cards-img/loja-maraja.png" alt="Web Crusaders Home" class="card__img" />
+              <img src="./assets/img/cards-img/loja-maraja.png" alt="Web Crusaders Home" class="card__img">
               <div class="card__body">
                 <h2 class="card__title">Loja Marajá</h2>
                 <p class="card__text">
@@ -103,12 +106,46 @@
                   do curso ETIM Informática para Internet
                 </p>
               </div>
+              <i class="link-icon fa fa-external-link" aria-hidden="true"></i>
             </a>
           </div>
 
-
+          <div class="card">
+            <a href="https://escola.stardustcrusaders.repl.co" target="_blank">
+              <img src="./assets/img/cards-img/web-crusaders.png" alt="Web Crusaders Home" class="card__img">
+              <div class="card__body">
+                <h2 class="card__title">Web Crusaders</h2>
+                <p class="card__text">
+                  Página do grupo escolar de aprendizado e desenvolvimento
+                  <em>Web Crusaders</em>
+                </p>
+              </div>
+              <i class="link-icon fa fa-external-link" aria-hidden="true"></i>
+            </a>
+          </div>
 
         </div>
+      </div>
+    </section>
+
+    <!-- ======= CONTATO ======= -->
+    <section class="contato" id="contato">
+      <div class="container">
+        <h1 class="title before-after-line" data-animate="slidesDown">Contato</h1>
+        <form action="https://formsubmit.co/f4cf315232c03cf70f4c61f3258edd1b" method="POST" class="contato__form" data-animate="slidesDown">
+          <div class="contato__wrapper">
+            <div class="contato__input-wrapper">
+              <input class="contato__input" type="text" name="nome" placeholder="Nome" required>
+              <input class="contato__input" type="email" name="email" placeholder="Email" required>
+            </div>
+            <textarea class="contato__textarea" name="mensagem" name="mensagem" placeholder="Mensagem" required></textarea>
+          </div>
+
+          <!-- FormSubmit API -->
+          <input type="hidden" name="_subject" value="Alguém entrou em contato!">
+
+          <input class="btn btn--primary" type="submit" value="Enviar">
+        </form>
       </div>
     </section>
   </main>
