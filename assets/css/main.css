@@ -719,7 +719,7 @@ footer {
     padding-top: 4rem;
     flex-direction: column;
     text-align: center;
-    background-color: rgba(var(--clr-accent), 1);
+    background-color: rgb(33, 90, 53);
     box-shadow: 0 0 15px var(--clr-secondary);
     transform: translateX(calc(-100% - 5px));
   }
