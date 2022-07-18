@@ -16,8 +16,7 @@ nav_btns.forEach((btn) => {
     })
 })
 
-
-
+const scrolldown_btn = document.querySelector(".scroll-down-btn") 
 
 
 
@@ -37,20 +36,21 @@ const activate_links = () => {
         link.addEventListener("click", (e) => {
             e.preventDefault()
             nav_list.classList.remove("active")
-            scrollTo(0, (section.offsetTop - 50))
+            scroll_to_target(section)
         })
     
-        if (screen_position >= (section.offsetTop - 100)) {
-            remove_active_items()
+        if (screen_position >= section.offsetTop - 100 && screen_position <= ((section.offsetTop - 100) + section.offsetHeight)) {
             link.parentElement.classList.add("active")
-        } 
+        } else {
+            link.parentElement.classList.remove("active")
+        }
     })
 }
 
-const remove_active_items = () => {
-    nav_items.forEach((item) => {
-        item.classList.remove("active")
-    })
+// Função de scroll
+
+const scroll_to_target = (target) => {
+    scrollTo(0, target.offsetTop - 50)
 }
 
 window.addEventListener("scroll", activate_links)
@@ -62,13 +62,12 @@ window.addEventListener("load", activate_links)
  * Animar elementos ao scroll
 */
 
-const animate_elements = document.querySelectorAll("[data-animate]")
-const animate_children = document.querySelector("[data-animate-children]")
+const animation_elements = document.querySelectorAll("[data-animate]")
+const animation_children = document.querySelector("[data-animate-children]")
 
-window.addEventListener("scroll", () => {
+const animate = () => {
     let screen_position = window.innerHeight
-
-    animate_elements.forEach((elemento) => {
+    animation_elements.forEach((elemento) => {
         let element_position = elemento.getBoundingClientRect().top
 
         if (element_position < screen_position - 200) {
@@ -76,15 +75,16 @@ window.addEventListener("scroll", () => {
         }
     })
 
-
-    let ac_position = animate_children.getBoundingClientRect().top
-
+    let ac_position = animation_children.getBoundingClientRect().top
     if (ac_position < screen_position - 200) {
         let delay_base = 1
-        animate_children.querySelectorAll("[data-animate-children] > *").forEach((child) => {
+        animation_children.querySelectorAll("[data-animate-children] > *").forEach((child) => {
             child.classList.add("animate")
             child.style.transitionDelay = `${delay_base * 0.25}s`
             delay_base++
         })
     }
-})
+}
+
+window.addEventListener("load", animate)
+window.addEventListener("scroll", animate)
