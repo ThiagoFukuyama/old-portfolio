@@ -271,8 +271,7 @@ nav {
   gap: 0.5rem;
 }
 
-.meu-nome,
-.glitch h1 {
+.meu-nome {
   position: relative;
   padding-bottom: 1rem;
   font-family: 'Montserrat', sans-serif;
@@ -293,12 +292,6 @@ nav {
   background-color: rgba(var(--clr-accent), 1);
 }
 
-.glitch {
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
 .subtitle {
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-family: var(--ff-accent);
@@ -313,11 +306,10 @@ nav {
   place-items: center;
   width: 45px;
   height: 45px;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   border-radius: 50%;
   z-index: 998;
   background-color: rgba(var(--clr-accent), 1);
-  opacity: 0.9;
   transition: transform 200ms ease-in-out;
 }
 
@@ -325,64 +317,6 @@ nav {
 .scroll-down-btn:focus {
   transform: translateY(5px);
 }
-
-
-/* || EFEITO DE GLITCH */
-
-/* .glitch {
-  position: absolute;
-  top: 0;
-  left: 0;
-  animation: glitch 4000ms infinite;
-  z-index: 2;
-}
-
-.glitch:first-of-type {
-  --translate: -0.14em, -0.14em;
-
-  clip-path: inset(0 0 46% 0);
-}
-
-.glitch:last-of-type {
-  --translate: 0.14em, 0.14em;
-
-  clip-path: inset(46% 0 0 0);
-}
-
-@keyframes glitch {
-  0% {
-    transform: translate(0);
-  }
-
-  14%{
-    transform: translate(0);
-  }
-  15% {
-    transform: translate(var(--translate));
-  }
-
-  49% {
-    transform: translate(var(--translate));
-  }
-  50% {
-    transform: translate(0);
-  }
-
-  99% {
-    transform: translate(0);
-  }
-  100% {
-    transform: translate(var(--translate));
-  }
-}
-
-@media all and (max-width: 532px) {
-  .glitch {
-    animation: none;
-  }
-} */
-
-/*------------------------------------------------*/
 
 
 /* || SECTION 2 (Sobre mim) */
