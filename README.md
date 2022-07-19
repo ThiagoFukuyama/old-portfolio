@@ -1,3 +1,3 @@
 # Portfólio pessoal
 
-Repositório para o portfólio pessoal de Thiago Fukuyama Marcilli
+Repositório para o website do portfólio pessoal de Thiago Fukuyama Marcilli
