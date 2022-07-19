@@ -75,7 +75,7 @@ section {
   display: grid;
   place-items: center;
   width: 100%;
-  padding-block: 5rem;
+  padding-block: 4.75rem;
   padding-inline: 1.25rem;
 }
 
@@ -160,6 +160,10 @@ header {
   z-index: 999;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  transition: 200ms ease-in;
+}
+
+header.active {
   background-color: rgb(33, 90, 53);
   box-shadow: 0 0 15px var(--clr-secondary);
 }
@@ -253,6 +257,8 @@ nav {
   background-attachment: fixed;
   padding-bottom: 5rem;
   color: var(--clr-primary);
+  overflow: hidden;
+  z-index: 1;
 }
 
 .home__wrapper {
@@ -301,21 +307,39 @@ nav {
 
 .scroll-down-btn {
   position: absolute;
-  bottom: -1%;
+  bottom: 10%;
   display: grid;
   place-items: center;
   width: 45px;
   height: 45px;
-  font-size: 1.75rem;
-  border-radius: 50%;
-  z-index: 998;
-  background-color: rgba(var(--clr-accent), 1);
+  z-index: 4;
   transition: transform 200ms ease-in-out;
 }
 
 .scroll-down-btn:hover,
 .scroll-down-btn:focus {
   transform: translateY(5px);
+}
+
+.effect {
+  position: absolute;
+  background-color: rgba(var(--clr-accent), 0.8);
+  border-radius: 100%;
+  width: 5px;
+  height: 5px;
+  z-index: -1;
+  pointer-events: none;
+  animation: fadeInOut 400ms linear infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+  }
+
+  20%, 80% {
+    opacity: 1;
+  }
 }
 
 
@@ -640,7 +664,7 @@ footer {
 }
 
 @media all and (max-width: 480px) {
-  header {
+  header.active {
     background-color: transparent;
     box-shadow: none;
   }

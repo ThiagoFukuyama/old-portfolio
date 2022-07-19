@@ -1,5 +1,21 @@
 
 /**
+ * Ativar Header ao scroll
+*/
+
+const header = document.querySelector("header")
+
+const activate_header = () => {
+    let screen_position = window.scrollY
+    screen_position > 100 ? header.classList.add("active") : header.classList.remove("active") 
+}
+
+window.addEventListener("load", activate_header)
+window.addEventListener("scroll", activate_header)
+
+
+
+/**
  * Navbar responsiva
 */
 
@@ -41,6 +57,32 @@ const activate_links = () => {
 
 window.addEventListener("load", activate_links)
 window.addEventListener("scroll", activate_links)
+
+
+
+/**
+ * Efeito do mouse na Home
+*/
+
+const home = document.querySelector("#home")
+
+home.addEventListener("mousemove", (e) => {
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) return
+
+    let effect_el = document.createElement("span")
+    effect_el.classList.add("effect")
+    let x = e.clientX
+    let y = e.clientY
+
+    effect_el.style.left = `${x}px`
+    effect_el.style.top = `${y}px`
+
+    home.appendChild(effect_el)
+
+    setTimeout(() => {
+        effect_el.remove()
+    }, 400)
+})
 
 
 
