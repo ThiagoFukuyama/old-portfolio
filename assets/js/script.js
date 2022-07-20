@@ -32,6 +32,12 @@ nav_btns.forEach((btn) => {
     })
 })
 
+window.addEventListener("click", (e) => {
+    if (e.target !== nav_list && e.target.parentElement !== nav_btns[0]) {
+        nav_list.classList.remove("active")
+    }
+})
+
 
 
 /**
@@ -81,7 +87,7 @@ home.addEventListener("mousemove", (e) => {
 
     setTimeout(() => {
         effect_el.remove()
-    }, 400)
+    }, 500)
 })
 
 
