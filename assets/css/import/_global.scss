@@ -1,0 +1,179 @@
+/* -----------------------------------------
+|| ESTILOS GERAIS E RESETS
+----------------------------------------- */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+
+    /* -----------------------------------------
+    || CASO USUÁRIO NÃO QUEIRA ANIMAÇÕES
+    ----------------------------------------- */
+    @media (prefers-reduced-motion: reduce) {
+        animation-delay: -1ms !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        background-attachment: initial !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0s !important;
+        transition-delay: 0s !important;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+
+    @media only screen and (max-width: 300px) {
+        font-size: 14px;
+    }
+}
+
+body {
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    line-height: 1.6;
+    font-family: $ff-primary;
+    color: $clr-primary;
+    background-color: $clr-secondary;
+
+    &::-webkit-scrollbar {
+        width: auto;
+    }
+  
+    &::-webkit-scrollbar-track {
+        background: hsl(0, 0%, 4%);
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background: hsl(0, 0%, 45%);
+    }
+    
+    &::-webkit-scrollbar-thumb:hover {
+        background: hsl(0, 0%, 39%);
+    }
+}
+
+::selection {
+    color: white;
+    background-color: $clr-accent-faded;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    line-height: 1.1;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    display: block;
+}
+
+section {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    padding-top: 7rem;
+    padding-bottom: 0.25rem;
+    padding-inline: 1.625rem;
+
+    @media only screen and (max-width: 575px) {
+        padding-top: 5rem;
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    &--lg {
+        max-width: 1300px;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.title {
+    position: relative;
+    max-width: fit-content;
+    margin-inline: auto;
+    margin-bottom: 3rem;
+    font-size: clamp(2.25rem, 3vw, 3rem);
+    font-family: $ff-accent;
+
+    @media only screen and (max-width: 750px) {
+        margin-bottom: 2.625rem;
+    }
+}
+
+.btn {
+    min-width: fit-content;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 0.5em 1.25em;
+    font-family: $ff-accent;
+    font-size: 1.1rem;
+    border-radius: 2px;
+    outline: none;
+    color: $clr-primary;
+    border: 1px solid;
+    cursor: pointer;
+    transition: 100ms ease-in;
+
+    @media only screen and (max-width: 860px) {
+        font-size: 1rem;
+    }
+
+    &--primary {
+        background-color: #7a7a7a;
+        border-color: #7a7a7a;
+
+        &:hover,
+        &:focus {
+            background-color: #616161;
+            border-color: #616161;
+        }
+    }
+
+    &--alt {
+        background-color: $clr-accent-100;
+        border-color: $clr-accent-100;
+
+        &:hover,
+        &:focus {
+            background-color: $clr-primary;
+            border: 1px solid $clr-primary;
+            color: $clr-secondary;
+        }
+    }
+}
+
+footer {
+    padding: 1rem;
+    font-size: 0.9rem;
+    background-color: $clr-accent-300;
+    font-family: $ff-accent;
+}

@@ -1,8 +1,6 @@
-
 [data-animate] {
     opacity: 0;
-    transition: transform 1s,
-                opacity 1s;
+    transition: transform 1s, opacity 1s;
 }
 
 [data-animate="slidesRight"] {
@@ -21,7 +19,7 @@
     transform: translateY(30px);
 }
 
-[data-animate-children] > * {
+[data-animate-children]>* {
     opacity: 0;
     transform: translateY(-30px);
     transition: 1s;

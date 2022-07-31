@@ -1,0 +1,100 @@
+.home {
+    position: relative;
+    min-height: 95vh;
+    padding-top: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-image: url("../img/placeholder.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    background-blend-mode: darken;
+    background-attachment: fixed;
+    color: $clr-primary;
+    overflow: hidden;
+    z-index: 1;
+
+    &__wrapper {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    &__box {
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 2rem;
+        gap: 0.5rem;
+    }
+
+    .main-title {
+        position: relative;
+        padding-bottom: 1rem;
+        font-family: 'Montserrat', sans-serif;
+        font-size: clamp(3rem, 7vw, 5rem);
+        font-weight: 500;
+        text-transform: uppercase;
+        z-index: 3;
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-radius: 100%;
+            width: 100%;
+            height: 3px;
+            background-color: $clr-accent-100;
+        }
+    }
+
+    .subhead {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-family: $ff-accent;
+        font-weight: 300;
+        margin-top: 0.25rem;
+    }
+
+    .scroll-down-btn {
+        position: absolute;
+        bottom: 10%;
+        display: grid;
+        place-items: center;
+        width: 45px;
+        height: 45px;
+        z-index: 4;
+        transition: transform 200ms ease-in-out;
+
+        &:hover,
+        &:focus {
+            transform: translateY(5px);
+        }
+    }
+
+    .effect {
+        position: absolute;
+        background-color: $clr-accent-faded;
+        box-shadow: 0 0 10px $clr-accent-faded;
+        border-radius: 100%;
+        width: 6px;
+        height: 6px;
+        z-index: -1;
+        pointer-events: none;
+        animation: fadeInOut 500ms linear infinite;
+    }
+
+    @keyframes fadeInOut {
+
+        0%,
+        100% {
+            opacity: 0;
+        }
+
+        20%,
+        80% {
+            opacity: 1;
+        }
+    }
+}

@@ -12,40 +12,41 @@
   <!-- FAVICON -->
   <link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
   <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/main.css?a">
-  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/main.css?gajhf">
+  <link rel="stylesheet" href="assets/css/animations.css?gajhf">
   <!-- JS -->
-  <script src="assets/js/script.js?a" defer></script>
+  <script src="assets/js/script.js?gajhf" defer></script>
 </head>
 
 <body>
+    <!-- ======= HEADER ======= -->
   <header>
     <nav>
       <div class="navbar">
         <button type="button" class="navbar__toggle-btn" data-nav-btn="toggle"><i class="bi bi-list"></i></button>
         <ul class="navbar__list">
-          <li class="navbar__item"><a href="/#home" class="navbar__link">Home</a></li>
-          <li class="navbar__item"><a href="/#sobre-mim" class="navbar__link">Sobre Mim</a></li>
-          <li class="navbar__item"><a href="/#projetos" class="navbar__link">Projetos</a></li>
-          <li class="navbar__item"><a href="/#contato" class="navbar__link">Contato</a></li>
-          <li class="navbar__item close"><button class="navbar__close-btn" type="button" data-nav-btn="close"><i class="bi bi-x"></i></button></li>
+          <li class="navbar__item"><a href="#home" class="navbar__link">Home</a></li>
+          <li class="navbar__item"><a href="#sobre-mim" class="navbar__link">Sobre Mim</a></li>
+          <li class="navbar__item"><a href="#projetos" class="navbar__link">Projetos</a></li>
+          <li class="navbar__item"><a href="#contato" class="navbar__link">Contato</a></li>
+          <li class="close"><button class="navbar__close-btn" type="button" data-nav-btn="close"><i class="bi bi-x"></i></button></li>
         </ul>
       </div>
     </nav>
   </header>
 
   <main>
-    <!-- ======= BANNER ======= -->
+    <!-- ======= HOME ======= -->
     <section class="home" id="home">
       <div class="container">
         <div class="home__wrapper">
           <div class="home__box text-center">
-            <h1 class="meu-nome">Thiago Fukuyama</h1>
-            <p class="subtitle">Web Developer</p>
+            <h1 class="main-title">Thiago Fukuyama</h1>
+            <p class="subhead">Web Developer</p>
           </div>
         </div>
       </div>
-      <a href="/#sobre-mim" class="scroll-down-btn" type="button">
+      <a href="#sobre-mim" class="scroll-down-btn" type="button">
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
         viewBox="0 0 330 330" style="enable-background:new 0 0 330 330;" xml:space="preserve">
           <path fill="white" id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393
@@ -101,6 +102,7 @@
       <div class="container container--lg">
         <h1 class="title text-center" data-animate="slidesDown">Meus projetos</h1>
         <div class="cards-container" id="cards-container" data-animate-children>
+
           <div class="card">
             <a href="https://escola.stardustcrusaders.repl.co" target="_blank">
               <img src="./assets/img/cards-img/web-crusaders.png" alt="Web Crusaders Home" class="card__img">
@@ -129,19 +131,6 @@
             </a>
           </div>
 
-          <div class="card">
-            <a href="https://escola.stardustcrusaders.repl.co" target="_blank">
-              <img src="./assets/img/cards-img/web-crusaders.png" alt="Web Crusaders Home" class="card__img">
-              <div class="card__body">
-                <h2 class="card__title">Web Crusaders</h2>
-                <p class="card__text">
-                  Página inicial do grupo escolar de aprendizado e desenvolvimento
-                  <em>Web Crusaders</em>
-                </p>
-              </div>
-              <i class="link-icon bi bi-box-arrow-up-right"></i>
-            </a>
-          </div>
 
         </div>
       </div>
@@ -172,7 +161,7 @@
   <!-- ======= RODAPÉ ======= -->
   <footer>
       <div class="text-center">
-        <p>Desenvolvido por Thiago Fukuyama Marcilli</p>
+        <p>Desenvolvido por <strong>Thiago Fukuyama Marcilli</strong></p>
         <p>Copyright &#169; 2022</p>
       </div>
   </footer>

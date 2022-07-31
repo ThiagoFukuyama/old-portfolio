@@ -5,13 +5,13 @@
 
 const header = document.querySelector("header")
 
-const activate_header = () => {
-    let screen_position = window.scrollY
-    screen_position > 100 ? header.classList.add("active") : header.classList.remove("active") 
+const activateHeader = () => {
+    let screenPosition = window.scrollY
+    screenPosition > 1 ? header.classList.add("active") : header.classList.remove("active") 
 }
 
-window.addEventListener("load", activate_header)
-window.addEventListener("scroll", activate_header)
+window.addEventListener("load", activateHeader)
+window.addEventListener("scroll", activateHeader)
 
 
 
@@ -19,22 +19,22 @@ window.addEventListener("scroll", activate_header)
  * Navbar responsiva
 */
 
-const nav_list = document.querySelector(".navbar__list")
-const nav_btns = document.querySelectorAll("[data-nav-btn]") 
+const navList = document.querySelector(".navbar__list")
+const navButtons = document.querySelectorAll("[data-nav-btn]") 
 
-nav_btns.forEach((btn) => {
+navButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
         if (btn.dataset.navBtn === "toggle") {
-            nav_list.classList.toggle("active")
+            navList.classList.toggle("active")
         } else if (btn.dataset.navBtn === "close") {
-            nav_list.classList.remove("active")
+            navList.classList.remove("active")
         }
     })
 })
 
 window.addEventListener("click", (e) => {
-    if (e.target !== nav_list && e.target.parentElement !== nav_btns[0]) {
-        nav_list.classList.remove("active")
+    if (e.target !== navList && e.target.parentElement !== navButtons[0]) {
+        navList.classList.remove("active")
     }
 })
 
@@ -44,16 +44,18 @@ window.addEventListener("click", (e) => {
  * Tornar links da Navbar ativos
  */
 
-const activate_links = () => {
-    const navbar_links = document.querySelectorAll(".navbar__link")
-    let screen_position = window.scrollY + 200
+const activateLinks = () => {
+    const navbarLinks = document.querySelectorAll(".navbar__link")
+    let screenPosition = window.scrollY + 150
     
-    navbar_links.forEach((link) => {
-        const id = link.getAttribute("href").replace("/", "")
+    navbarLinks.forEach((link) => {
+        const id = link.getAttribute("href")
         const section = document.querySelector(id)
+        let sectionTop = section.offsetTop - 150
 
-        link.addEventListener("click", () => nav_list.classList.remove("active"))
-        if (screen_position >= section.offsetTop - 100 && screen_position <= ((section.offsetTop - 100) + section.offsetHeight)) {
+        link.addEventListener("click", () => navList.classList.remove("active")) 
+        
+        if (screenPosition >= sectionTop && screenPosition <= (sectionTop + section.offsetHeight)) {
             link.classList.add("active")
         } else {
             link.classList.remove("active")
@@ -61,8 +63,8 @@ const activate_links = () => {
     })
 }
 
-window.addEventListener("load", activate_links)
-window.addEventListener("scroll", activate_links)
+window.addEventListener("load", activateLinks)
+window.addEventListener("scroll", activateLinks)
 
 
 
@@ -75,18 +77,18 @@ const home = document.querySelector("#home")
 home.addEventListener("mousemove", (e) => {
     if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) return
 
-    let effect_el = document.createElement("span")
-    effect_el.classList.add("effect")
+    let effectElement = document.createElement("span")
+    effectElement.classList.add("effect")
     let x = e.clientX
     let y = e.clientY
 
-    effect_el.style.left = `${x}px`
-    effect_el.style.top = `${y}px`
+    effectElement.style.left = `${x}px`
+    effectElement.style.top = `${y}px`
 
-    home.appendChild(effect_el)
+    home.appendChild(effectElement)
 
     setTimeout(() => {
-        effect_el.remove()
+        effectElement.remove()
     }, 500)
 })
 
@@ -96,25 +98,25 @@ home.addEventListener("mousemove", (e) => {
  * Animar elementos ao scroll
 */
 
-const animation_elements = document.querySelectorAll("[data-animate]")
-const animation_children = document.querySelector("[data-animate-children]")
+const animationElements = document.querySelectorAll("[data-animate]")
+const animationChildrenElements = document.querySelector("[data-animate-children]")
 
 const animate = () => {
-    let screen_position = window.innerHeight
-    animation_elements.forEach((elemento) => {
-        let element_position = elemento.getBoundingClientRect().top
-        if (element_position < screen_position - 100) {
-            elemento.classList.add("animate")
+    let screenPosition = window.innerHeight
+    animationElements.forEach((element) => {
+        let element_position = element.getBoundingClientRect().top
+        if (element_position < screenPosition - 150) {
+            element.classList.add("animate")
         } 
     })
 
-    let ac_position = animation_children.getBoundingClientRect().top
-    if (ac_position < screen_position - 100) {
-        let delay_base = 1
-        animation_children.querySelectorAll("[data-animate-children] > *").forEach((child) => {
+    let animateChildrenPosition = animationChildrenElements.getBoundingClientRect().top
+    if (animateChildrenPosition < screenPosition - 150) {
+        let delayBase = 1
+        animationChildrenElements.querySelectorAll("[data-animate-children] > *").forEach((child) => {
             child.classList.add("animate")
-            child.style.transitionDelay = `${delay_base * 0.25}s`
-            delay_base++
+            child.style.transitionDelay = `${delayBase * 0.25}s`
+            delayBase++
         })
     }
 }

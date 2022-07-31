@@ -1,0 +1,76 @@
+.projetos {
+    position: relative;
+    background-image: linear-gradient($section-clr-2, $section-clr-3);
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 2rem;
+
+    .card {
+        position: relative;
+        max-width: 400px;
+        background-color: #242526;
+        color: $clr-primary;
+        border-radius: 3px;
+        border-bottom-right-radius: 0;
+        box-shadow: 1px 1px 3px $clr-primary;
+        overflow: hidden;
+
+        & > a {
+            display: block;
+            position: relative;
+            outline: none;
+        }
+
+        &__img {
+            max-width: 100%;
+            transition: 200ms ease-in;
+        }
+
+        &__body {
+            padding: 1rem;
+        }
+
+        &__title {
+            position: relative;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                border-radius: 100%;
+                width: 80px;
+                height: 2px;
+                background-color: $clr-accent-100
+            }
+        }
+
+        .link-icon {
+            position: absolute;
+            top: 7px;
+            right: 10px;
+            font-size: 1.125rem;
+            opacity: 0;
+            transition: opacity 200ms ease-in;
+        }
+
+        &:hover .card__img,
+        &:focus-within .card__img {
+            filter: brightness(65%);
+        }
+
+        &:hover .link-icon,
+        &:focus-within .link-icon {
+            opacity: 1;
+        }
+    }
+}
