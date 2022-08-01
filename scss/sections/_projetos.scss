@@ -1,6 +1,10 @@
+
+@use "../abstracts/colors" as c;
+@use "../abstracts/fonts" as f;
+
 .projetos {
     position: relative;
-    background-image: linear-gradient($section-clr-2, $section-clr-3);
+    background-image: linear-gradient(c.$section-clr-2, c.$section-clr-3);
 }
 
 .cards-container {
@@ -14,10 +18,10 @@
         position: relative;
         max-width: 400px;
         background-color: #242526;
-        color: $clr-primary;
+        color: c.$clr-primary;
         border-radius: 3px;
         border-bottom-right-radius: 0;
-        box-shadow: 1px 1px 3px $clr-primary;
+        box-shadow: 1px 1px 3px c.$clr-primary;
         overflow: hidden;
 
         & > a {
@@ -50,7 +54,7 @@
                 border-radius: 100%;
                 width: 80px;
                 height: 2px;
-                background-color: $clr-accent-100
+                background-color: c.$clr-accent-100
             }
         }
 

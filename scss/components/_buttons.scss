@@ -1,0 +1,46 @@
+
+@use "../abstracts/colors" as c;
+@use "../abstracts/fonts" as f;
+
+.btn {
+    min-width: fit-content;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 0.5em 1.25em;
+    font-family: f.$ff-accent;
+    font-size: 1.1rem;
+    border-radius: 2px;
+    outline: none;
+    color: c.$clr-primary;
+    border: 1px solid;
+    cursor: pointer;
+    transition: 100ms ease-in;
+
+    @media only screen and (max-width: 860px) {
+        font-size: 1rem;
+    }
+
+    &--primary {
+        background-color: #7a7a7a;
+        border-color: #7a7a7a;
+
+        &:hover,
+        &:focus {
+            background-color: #616161;
+            border-color: #616161;
+        }
+    }
+
+    &--alt {
+        background-color: c.$clr-accent-100;
+        border-color: c.$clr-accent-100;
+
+        &:hover,
+        &:focus {
+            background-color: c.$clr-primary;
+            border: 1px solid c.$clr-primary;
+            color: c.$clr-secondary;
+        }
+    }
+}

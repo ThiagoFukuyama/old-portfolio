@@ -1,7 +1,4 @@
 @charset "UTF-8";
-/* ===============================
-        FEITO COM SASS
-================================ */
 /* Archivo */
 @import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;1,100&family=Lobster&family=Montserrat&display=swap");
 /* Exo 2 */
@@ -188,13 +185,6 @@ section {
   color: hsl(0deg, 0%, 9%);
 }
 
-footer {
-  padding: 1rem;
-  font-size: 0.9rem;
-  background-color: hsl(140deg, 47%, 18%);
-  font-family: "Exo 2", sans-serif;
-}
-
 header {
   position: fixed;
   top: 0;
@@ -320,6 +310,13 @@ header nav .navbar__close-btn {
   color: hsl(0deg, 0%, 89%);
   background-color: transparent;
   border: 0;
+}
+
+footer {
+  padding: 1rem;
+  font-size: 0.9rem;
+  background-color: hsl(140deg, 47%, 18%);
+  font-family: "Exo 2", sans-serif;
 }
 
 .home {
@@ -707,4 +704,8 @@ header nav .navbar__close-btn {
 .animate {
   opacity: 1;
   transform: translate(0, 0);
-}/*# sourceMappingURL=main.css.map */
+}
+
+/* ===============================
+        FEITO COM SASS
+================================ *//*# sourceMappingURL=main.css.map */

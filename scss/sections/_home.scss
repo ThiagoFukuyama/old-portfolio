@@ -1,3 +1,7 @@
+
+@use "../abstracts/colors" as c;
+@use "../abstracts/fonts" as f;
+
 .home {
     position: relative;
     min-height: 95vh;
@@ -9,7 +13,7 @@
     background-position: center top;
     background-blend-mode: darken;
     background-attachment: fixed;
-    color: $clr-primary;
+    color: c.$clr-primary;
     overflow: hidden;
     z-index: 1;
 
@@ -46,13 +50,13 @@
             border-radius: 100%;
             width: 100%;
             height: 3px;
-            background-color: $clr-accent-100;
+            background-color: c.$clr-accent-100;
         }
     }
 
     .subhead {
         font-size: clamp(1.5rem, 3vw, 2rem);
-        font-family: $ff-accent;
+        font-family: f.$ff-accent;
         font-weight: 300;
         margin-top: 0.25rem;
     }
@@ -75,8 +79,8 @@
 
     .effect {
         position: absolute;
-        background-color: $clr-accent-faded;
-        box-shadow: 0 0 10px $clr-accent-faded;
+        background-color: c.$clr-accent-faded;
+        box-shadow: 0 0 10px c.$clr-accent-faded;
         border-radius: 100%;
         width: 6px;
         height: 6px;

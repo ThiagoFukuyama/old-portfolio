@@ -1,0 +1,10 @@
+
+@use "../abstracts/colors" as c;
+@use "../abstracts/fonts" as f;
+
+footer {
+    padding: 1rem;
+    font-size: 0.9rem;
+    background-color: c.$clr-accent-300;
+    font-family: f.$ff-accent;
+}

@@ -1,12 +1,16 @@
+
+@use "../abstracts/colors" as c;
+@use "../abstracts/fonts" as f;
+
 .contato {
     position: relative;
     padding-bottom: 7rem;
-    background-image: linear-gradient($section-clr-3, $section-clr-3);
+    background-image: linear-gradient(c.$section-clr-3, c.$section-clr-3);
 
     &__form {
         padding: 1rem;
         border-radius: 5px;
-        box-shadow: 0 0 15px $clr-accent-faded;
+        box-shadow: 0 0 15px c.$clr-accent-faded;
 
         & input[type="submit"] {
             position: relative;
@@ -51,7 +55,7 @@
     &__textarea {
         padding: 0.5rem 0.75rem;
         font-size: 1.125rem;
-        font-family: $ff-primary;
+        font-family: f.$ff-primary;
         border-radius: 3px;
         background-color: hsl(0, 0%, 96%);
         color: rgb(58, 58, 58);

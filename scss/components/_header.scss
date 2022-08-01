@@ -1,3 +1,7 @@
+
+@use "../abstracts/colors" as c;
+@use "../abstracts/fonts" as f;
+
 header {
     position: fixed;
     top: 0;
@@ -9,7 +13,7 @@ header {
     transition: 200ms ease-in;
 
     &.active {
-        background-color: $clr-accent-200;
+        background-color: c.$clr-accent-200;
         box-shadow: 0 0 15px black;
 
         @media only screen and (max-width: 480px) {
@@ -21,7 +25,7 @@ header {
     nav {
         width: 100%;
         text-transform: uppercase;
-        font-family: $ff-accent;
+        font-family: f.$ff-accent;
 
         .navbar {
             display: flex;
@@ -54,8 +58,8 @@ header {
                     padding: 2rem;
                     padding-top: 4rem;
                     flex-direction: column;
-                    background-color: $clr-accent-200;
-                    box-shadow: 0 0 15px $clr-secondary;
+                    background-color: c.$clr-accent-200;
+                    box-shadow: 0 0 15px c.$clr-secondary;
                     border-top-right-radius: 20px;
                     border-bottom-right-radius: 20px;
                     transform: translateX(calc(-100% - 5px));
@@ -82,8 +86,8 @@ header {
                 display: none;
                 font-size: 2rem;
                 font-weight: bold;
-                background-color: $clr-accent-100;
-                color: $clr-primary;
+                background-color: c.$clr-accent-100;
+                color: c.$clr-primary;
                 box-shadow: -1px 1px 5px black;
                 border: 0;
                 border-radius: 3px;
@@ -111,7 +115,7 @@ header {
                     left: 0;
                     width: 100%;
                     height: 2px;
-                    background-color: $clr-primary;
+                    background-color: c.$clr-primary;
                     transform: scaleX(0);
                 }
 
@@ -123,7 +127,7 @@ header {
             &__close-btn {
                 font-size: 2rem;
                 font-weight: bold;
-                color: $clr-primary;
+                color: c.$clr-primary;
                 background-color: transparent;
                 border: 0;
             }
