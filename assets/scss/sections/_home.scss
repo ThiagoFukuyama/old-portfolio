@@ -4,15 +4,9 @@
 
 .home {
     position: relative;
-    min-height: 95vh;
+    min-height: 100vh;
     padding-top: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    background-image: url("../img/placeholder.webp");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center top;
-    background-blend-mode: darken;
-    background-attachment: fixed;
+    background-color: c.$section-clr-1;
     color: c.$clr-primary;
     overflow: hidden;
     z-index: 1;
@@ -77,28 +71,35 @@
         }
     }
 
-    .effect {
+    .background-effect {
         position: absolute;
-        background-color: c.$clr-accent-faded;
-        box-shadow: 0 0 10px c.$clr-accent-faded;
-        border-radius: 100%;
-        width: 6px;
-        height: 6px;
-        z-index: -1;
-        pointer-events: none;
-        animation: fadeInOut 500ms linear infinite;
-    }
+        inset: 0;
+        display: flex;
+        justify-content: space-around;
 
-    @keyframes fadeInOut {
+        span {
+            display: inline-block;
+            width: 4px;
+            height: 150px;
+            background-color: c.$clr-accent-faded;
+            box-shadow: 
+                0 0 5px c.$clr-accent-faded,
+                0 0 15px c.$clr-accent-faded,
+                0 0 25px c.$clr-accent-faded;
+            border-radius: 1px;
+            animation-name: falling;
+            animation-duration: calc(120s / var(--i));
+            animation-delay: calc(10s / var(--i));
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            transform: translateY(-25vh);
 
-        0%,
-        100% {
-            opacity: 0;
-        }
-
-        20%,
-        80% {
-            opacity: 1;
+            @keyframes falling {
+                to {
+                    transform: translateY(110vh);
+                    opacity: 0;
+                }
+            }
         }
     }
 }

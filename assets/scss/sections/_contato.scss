@@ -4,7 +4,6 @@
 
 .contato {
     position: relative;
-    padding-bottom: 7rem;
     background-image: linear-gradient(c.$section-clr-3, c.$section-clr-3);
 
     &__form {
@@ -54,18 +53,13 @@
     &__input,
     &__textarea {
         padding: 0.5rem 0.75rem;
-        font-size: 1.125rem;
+        font-size: 1.1rem;
         font-family: f.$ff-primary;
         border-radius: 3px;
         background-color: hsl(0, 0%, 96%);
         color: rgb(58, 58, 58);
-        outline: none;
         box-shadow: inset 0 0 4px black;
         transition: 200ms ease-in;
-
-        &:focus {
-            background-color: hsl(0, 0%, 87%);
-        }
 
         &::placeholder {
             opacity: 0.8;

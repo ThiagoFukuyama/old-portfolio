@@ -69,32 +69,6 @@ window.addEventListener("scroll", activateLinks)
 
 
 /**
- * Efeito do mouse na Home
-*/
-
-const home = document.querySelector("#home")
-
-home.addEventListener("mousemove", (e) => {
-    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) return
-
-    let effectElement = document.createElement("span")
-    effectElement.classList.add("effect")
-    let x = e.clientX
-    let y = e.clientY
-
-    effectElement.style.left = `${x}px`
-    effectElement.style.top = `${y}px`
-
-    home.appendChild(effectElement)
-
-    setTimeout(() => {
-        effectElement.remove()
-    }, 500)
-})
-
-
-
-/**
  * Animar elementos ao scroll
 */
 

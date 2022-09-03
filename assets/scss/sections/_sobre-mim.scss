@@ -19,7 +19,6 @@
         grid-template-columns: 1fr 30%;
         place-items: center;
         width: 100%;
-        max-width: 900px;
         gap: $grid-spacer;
 
         @media only screen and (max-width: 860px) {
@@ -76,6 +75,7 @@
     }
 
     .info {
+        list-style: none;
         grid-column: span 2;
         display: grid;
         justify-items: center;

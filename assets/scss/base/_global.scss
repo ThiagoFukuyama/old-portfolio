@@ -101,6 +101,10 @@ section {
     padding-bottom: 0.25rem;
     padding-inline: 1.625rem;
 
+    &:last-of-type {
+        padding-bottom: 6rem;
+    }
+
     @media only screen and (max-width: 575px) {
         padding-top: 5rem;
     }
@@ -108,7 +112,7 @@ section {
 
 .container {
     width: 100%;
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
 
     &--lg {

@@ -110,6 +110,9 @@ section {
   padding-bottom: 0.25rem;
   padding-inline: 1.625rem;
 }
+section:last-of-type {
+  padding-bottom: 6rem;
+}
 @media only screen and (max-width: 575px) {
   section {
     padding-top: 5rem;
@@ -118,7 +121,7 @@ section {
 
 .container {
   width: 100%;
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
 }
 .container--lg {
@@ -315,21 +318,15 @@ header nav .navbar__close-btn {
 footer {
   padding: 1rem;
   font-size: 0.9rem;
-  background-color: hsl(140deg, 47%, 18%);
+  background-color: hsl(140deg, 47%, 24%);
   font-family: "Exo 2", sans-serif;
 }
 
 .home {
   position: relative;
-  min-height: 95vh;
+  min-height: 100vh;
   padding-top: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  background-image: url("../img/placeholder.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center top;
-  background-blend-mode: darken;
-  background-attachment: fixed;
+  background-color: hsl(0deg, 0%, 8%);
   color: hsl(0deg, 0%, 89%);
   overflow: hidden;
   z-index: 1;
@@ -386,39 +383,48 @@ footer {
 .home .scroll-down-btn:hover, .home .scroll-down-btn:focus {
   transform: translateY(5px);
 }
-.home .effect {
+.home .background-effect {
   position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-around;
+}
+.home .background-effect span {
+  display: inline-block;
+  width: 4px;
+  height: 150px;
   background-color: hsla(140deg, 47%, 42%, 0.9);
-  box-shadow: 0 0 10px hsla(140deg, 47%, 42%, 0.9);
-  border-radius: 100%;
-  width: 6px;
-  height: 6px;
-  z-index: -1;
-  pointer-events: none;
-  -webkit-animation: fadeInOut 500ms linear infinite;
-          animation: fadeInOut 500ms linear infinite;
+  box-shadow: 0 0 5px hsla(140deg, 47%, 42%, 0.9), 0 0 15px hsla(140deg, 47%, 42%, 0.9), 0 0 25px hsla(140deg, 47%, 42%, 0.9);
+  border-radius: 1px;
+  -webkit-animation-name: falling;
+          animation-name: falling;
+  -webkit-animation-duration: calc(120s / var(--i));
+          animation-duration: calc(120s / var(--i));
+  -webkit-animation-delay: calc(10s / var(--i));
+          animation-delay: calc(10s / var(--i));
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  transform: translateY(-25vh);
 }
-@-webkit-keyframes fadeInOut {
-  0%, 100% {
+@-webkit-keyframes falling {
+  to {
+    transform: translateY(110vh);
     opacity: 0;
   }
-  20%, 80% {
-    opacity: 1;
-  }
 }
-@keyframes fadeInOut {
-  0%, 100% {
+@keyframes falling {
+  to {
+    transform: translateY(110vh);
     opacity: 0;
-  }
-  20%, 80% {
-    opacity: 1;
   }
 }
 
 .sobre-mim {
   position: relative;
   padding-top: 6rem;
-  background-image: linear-gradient(hsl(0deg, 0%, 4%), hsl(0deg, 0%, 7%));
+  background-image: linear-gradient(hsl(0deg, 0%, 8%), hsl(0deg, 0%, 10%));
 }
 @media only screen and (max-width: 575px) {
   .sobre-mim {
@@ -431,7 +437,6 @@ footer {
   grid-template-columns: 1fr 30%;
   place-items: center;
   width: 100%;
-  max-width: 900px;
   gap: 1.5rem;
 }
 @media only screen and (max-width: 860px) {
@@ -489,6 +494,7 @@ footer {
   }
 }
 .sobre-mim .info {
+  list-style: none;
   grid-column: span 2;
   display: grid;
   justify-items: center;
@@ -541,7 +547,7 @@ footer {
 
 .projetos {
   position: relative;
-  background-image: linear-gradient(hsl(0deg, 0%, 7%), hsl(0deg, 0%, 10%));
+  background-image: linear-gradient(hsl(0deg, 0%, 10%), hsl(0deg, 0%, 12%));
 }
 
 .cards-container {
@@ -607,8 +613,7 @@ footer {
 
 .contato {
   position: relative;
-  padding-bottom: 7rem;
-  background-image: linear-gradient(hsl(0deg, 0%, 10%), hsl(0deg, 0%, 10%));
+  background-image: linear-gradient(hsl(0deg, 0%, 12%), hsl(0deg, 0%, 12%));
 }
 .contato__form {
   padding: 1rem;
@@ -652,17 +657,13 @@ footer {
 }
 .contato__input, .contato__textarea {
   padding: 0.5rem 0.75rem;
-  font-size: 1.125rem;
+  font-size: 1.1rem;
   font-family: "Archivo", sans-serif;
   border-radius: 3px;
   background-color: hsl(0deg, 0%, 96%);
   color: rgb(58, 58, 58);
-  outline: none;
   box-shadow: inset 0 0 4px black;
   transition: 200ms ease-in;
-}
-.contato__input:focus, .contato__textarea:focus {
-  background-color: hsl(0deg, 0%, 87%);
 }
 .contato__input::-moz-placeholder, .contato__textarea::-moz-placeholder {
   opacity: 0.8;
@@ -704,8 +705,4 @@ footer {
 .animate {
   opacity: 1;
   transform: translate(0, 0);
-}
-
-/* ===============================
-        FEITO COM SASS
-================================ *//*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
